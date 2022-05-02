@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3D地球</title>
+</head>
+<body>
+  <div id="earth"></div>
+  <script type="module">
+    import * as THREE from 'https://cdn.skypack.dev/three@0.139.2';
+    
+    let camera;
+    let scene;
+    let renderer;
+    var mesh;
+    const width = 500;
+    const height = 500;
+
+    function init() {
+      camera = new THREE.PerspectiveCamera(50, width / height, 1, 1000);
+      camera.position.z = 400;
+      // 创建场景
+      scene = new THREE.Scene();
+      // 创建纹理
+      const texture = new THREE.TextureLoader().load('earth.jpeg');
+      // 创建几何模型：球
+      const geometry = new THREE.SphereGeometry(150, 30, 30);
+      // 创建材质
+      const material = new THREE.MeshBasicMaterial({ map: texture });
+      // 创建网格
+      mesh = new THREE.Mesh(geometry, material);
+      // 加入场景
+      scene.add(mesh);
+      // 创建渲染器
+      renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+      renderer.setSize(width, height);
+      document.getElementById('earth').appendChild(renderer.domElement);
+    }
+
+    function animate() {
+      requestAnimationFrame(animate);
+      mesh.rotation.x += 0.005;
+      mesh.rotation.y += 0.005;
+      renderer.render(scene, camera);
+    }
+
+    init();
+    animate();
+  </script>
+</body>
+</html>

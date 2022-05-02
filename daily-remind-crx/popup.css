@@ -1,0 +1,117 @@
+body {
+  margin: 0;
+  padding: 0;
+  width: 240px;
+  user-select: none;
+}
+#title {
+  margin: 0;
+  padding: 5px 10px;
+  display: inline-block;
+}
+#desc {
+  display: inline-block;
+  font-size: 14px;
+}
+.mh {
+  font-weight: bold;
+  animation: shining linear .5s alternate infinite;
+}
+.select-item {
+  padding: 5px 10px;
+}
+.select-item:hover {
+  background-color:#f5f5f5;
+}
+.select-item>p {
+  display: inline-block;
+}
+.content-box {
+  padding: 5px 10px;
+}
+.content-list {
+  margin: 10px 0;
+}
+.content-item {
+  margin: 10px 0;
+}
+.content-item>input {
+  width: 180px;
+  outline: none;
+}
+.del-btn {
+  display: inline-block;
+  margin-left: 10px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color:red;
+  position: relative;
+  vertical-align: text-bottom;
+  cursor: pointer;
+}
+.del-btn:before {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 2px;
+  border-radius: 1px;
+  background-color: white;
+  transform: rotate(45deg);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.del-btn:after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 2px;
+  border-radius: 1px;
+  background-color: white;
+  transform: rotate(-45deg);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+#create-btn {
+  display: inline-block;
+  border-radius: 5px;
+  background-color: #3582fb;
+  color: white;
+  padding: 0 5px;
+  margin-left: 5px;
+}
+.btn-group {
+  margin: 10px;
+  text-align: center;
+}
+.btn {
+  padding: 5px 10px;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+}
+.btn:active {
+  opacity: .5;
+}
+#save-btn {
+  background-color: #3582fb;
+  width: 60%;
+}
+#jump-btn {
+  background-color: #4cb749;
+}
+@keyframes shining {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

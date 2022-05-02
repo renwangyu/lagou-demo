@@ -1,0 +1,33 @@
+{
+  "name": "node-ssr-study",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "yarn ejs:koa",
+    "ejs:node": "node ejs-demo/node-ssr.js",
+    "ejs:koa": "node ejs-demo/koa-ssr.js"
+  },
+  "dependencies": {
+    "axios": "^0.26.1",
+    "babel-polyfill": "^6.26.0",
+    "ejs": "^3.1.6",
+    "http-proxy-middleware": "^2.0.4",
+    "koa": "^2.13.4",
+    "koa-router": "^10.1.1",
+    "koa-static": "^5.0.0",
+    "koa2-connect": "^1.0.2",
+    "koa2-proxy-middleware": "^0.0.4",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.5",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "babel-loader": "^8.2.3",
+    "webpack": "^5.70.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-node-externals": "^3.0.0"
+  }
+}

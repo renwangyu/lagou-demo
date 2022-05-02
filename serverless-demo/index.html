@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Serverless Demo</title>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+</head>
+<body>
+  <h1>Serverless Demo</h1>
+  <div>
+    <input type="text" id="input" placeholder="请输入姓名">
+    <button id="sendBtn">发送</button>
+  </div>
+  <p id="display">try to input your name~</p>
+  <script>
+    $('#sendBtn').click(function () { 
+      const name = $('input').val();
+      console.log(name);
+      $('#display').text('waiting');
+      $.get('/fetch', { name }, function (data) {
+        $('#display').text(data);
+      })
+    })
+  </script>
+</body>
+</html>

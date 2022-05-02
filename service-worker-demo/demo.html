@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    img {
+      width: 500px;
+      object-fit: contain;
+    }
+  </style>
+  <title>Service Worker</title>
+</head>
+<body>
+  <h1>Service Worker Demo</h1>
+  <div>
+    <button id="lionBtn">狮子</button>
+    <button id="wolfBtn">狼</button>
+  </div>
+  <div>
+    <input id="input" type="text">
+    <button id="sendBtn">发送</button>
+    <p id="show"></p>
+  </div>
+  <script type="text/javascript">
+    /* 
+      调用register，下载Service Worker
+      如果脚本在初始执行中未能进行下载、解析，或引发错误
+      promise调用catch，并舍弃此Service Worker
+    */
+    navigator.serviceWorker.register('/sw.js') // 这里可以设置scope，默认是sw文件同级
+      .then(reg => console.log('sw: registered!', reg))
+      .catch(err => console.log('sw: ...error!', err));
+
+    // 无法操作DOM
+    navigator.serviceWorker.addEventListener('message', function(e) {
+      document.querySelector('#show').innerHTML = e.data;
+    })
+
+    setTimeout(() => {
+      const img = new Image();
+      img.id = 'picture';
+      img.src = '/wolf.png';
+      document.body.appendChild(img);
+    }, 1000);
+
+    document.querySelector('#lionBtn').addEventListener('click', function(e) {
+      document.querySelector('#picture').src = '/lion.png';
+    });
+    document.querySelector('#wolfBtn').addEventListener('click', function(e) {
+      document.querySelector('#picture').src = '/wolf.png';
+    });
+    document.querySelector('#sendBtn').addEventListener('click', function(e) {
+      var val = document.querySelector('#input').value || '空的啊';
+      try {
+        navigator.serviceWorker.controller.postMessage(val);
+      } catch {
+        document.querySelector('#show').innerHTML = '第一次吧？刷新试试';
+      }
+    });
+  </script>
+</body>
+</html>

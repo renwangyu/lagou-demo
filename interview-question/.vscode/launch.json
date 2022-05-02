@@ -1,0 +1,44 @@
+{
+  // 使用 IntelliSense 了解相关属性。 
+  // 悬停以查看现有属性的描述。
+  // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "pwa-node",
+      "request": "launch",
+      "name": "iterator",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}/iterator.js"
+    },
+    {
+      "type": "pwa-node",
+      "request": "launch",
+      "name": "chain-call",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}/chain-call.js"
+    },
+    {
+      "type": "pwa-node",
+      "request": "launch",
+      "name": "proxy",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}/proxy.js"
+    },
+    {
+      "type": "pwa-node",
+      "request": "launch",
+      "name": "test",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}/test.js"
+    }
+  ]
+}

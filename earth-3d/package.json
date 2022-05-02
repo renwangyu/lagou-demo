@@ -1,0 +1,12 @@
+{
+  "name": "earth-3d",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "http-server ./ -p 8000"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.0"
+  }
+}

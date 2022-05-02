@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>popup</title>
+  <link rel="stylesheet" href="./popup.css" />
+</head>
+<body>
+  <h3 id="title">日报提醒</h3>
+  <div id="desc"></div>
+  <button id="notifyBtn">通知</button>
+  <hr style="margin:0;" />
+  <div class="select-item">
+    <p>请设置提醒时间:</p>
+    <select name="hour" id="hour">
+      <option value="18">18</option>
+      <option value="19">19</option>
+      <option value="20">20</option>
+      <option value="21">21</option>
+      <option value="22">22</option>
+      <option value="23">23</option>
+    </select>
+    <span class="mh">:</span>
+    <select name="minute" id="minute">
+      <option value="0">00</option>
+      <option value="15">15</option>
+      <option value="30">30</option>
+      <option value="45">45</option>
+    </select>
+  </div>
+  <div class="content-box select-item">
+    <div>创建日报常用内容<span class="btn" id="create-btn">+新建</span></div>
+    <div class="content-list">
+    </div>
+  </div>
+  <div class="btn-group">
+    <button class="btn" id="save-btn">保存设置</button>
+    <button class="btn" id="jump-btn">写日报</button>
+  </div>
+  <script src="scripts/jquery-3.4.1.min.js" type="text/javascript"></script>
+  <script src="scripts/popup.js" type="text/javascript"></script>
+</body>
+</html>

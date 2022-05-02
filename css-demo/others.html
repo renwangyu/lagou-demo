@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>冷知识</title>
+  <style>
+    .circle {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background-color: black;
+    }
+    .shape {
+      float: left;
+      shape-outside: circle(50%);
+    }
+  </style>
+  <style>
+    .blend {
+      text-align: center;
+      color: #000;
+      background-image: linear-gradient(90deg, #fff 49.9%, #000 50%);
+      border: 1px solid black;
+    }
+    .blend>span {
+      font-size: 100px;
+      color: #fff;
+      mix-blend-mode: difference;
+    }
+  </style>
+</head>
+<body>
+  <h1>css浮动shape</h1>
+  <div>
+    <div class="circle shape"></div>
+    夜阑人静,明月清风,抬起头,如水的月光就洒落一身,痴痴凝望,竟有你清晰的面孔.上前拉住了你温热的手,看天边风儿掀动云层,风云迭起是你追赶我欢乐的歌声.望风听月,诗赋迷沉,是你给了我花前月下的美丽,是你让我品尝着这稀世佳肴的风情.于是,想在古筝的弦乐上为你独舞,想在月下清荷旁为你玉立亭亭,想在女子最娓婉的等候里与你相视而笑,想在断桥的残存里延续伞下的温情......
+　　云儿淡了,风儿停了,伫足的驿站桃花粉红,又是一年春来早,你青色的衣衫了无踪影.花儿从开放到落下,也是它匆忙的一生,独自站立,落英缤纷难掩我落莫的沧然,开放时的欣喜已经枯萎,你暗然的离去让我何去何从?
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <h1>混合模式</h1>
+  <div class="blend">
+    <span>Blend3Mode</span>
+  </div>
+</body>
+</html>

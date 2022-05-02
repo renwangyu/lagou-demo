@@ -1,0 +1,16 @@
+{
+  "name": "babel-plugin-no-console",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "test": "babel code.js -o ./dist/code.js"
+  },
+  "dependencies": {
+    "@babel/core": "^7.17.7",
+    "@babel/types": "^7.17.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.17.6"
+  }
+}
