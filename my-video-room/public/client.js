@@ -7,6 +7,7 @@ const myPeer = new Peer(undefined, {
 });
 
 const peers = {};
+const remoteIds = [];
 
 const myVideo = document.createElement('video');
 myVideo.muted = true;
@@ -18,6 +19,7 @@ navigator.mediaDevices.getUserMedia({
   addVideoStream(myVideo, stream);
 
   myPeer.on('call', call => {
+    call.peer && remoteIds.push(call.peer);
     call.answer(stream);
     const video = document.createElement('video');
     video.muted = true;
@@ -27,7 +29,7 @@ navigator.mediaDevices.getUserMedia({
   });
 
   socket.on('user-connected', userId => {
-    console.log('user connected: ' + userId);
+    userId && remoteIds.push(userId);
     connectToNewUser(userId, stream);
   });
 })
@@ -39,6 +41,7 @@ socket.on('user-disconnected', userId => {
 });
 
 myPeer.on('open', id => {
+  document.getElementById('myId').innerText = id;
   socket.emit('join-room', ROOM_ID, id);
 });
 
@@ -49,6 +52,8 @@ function addVideoStream(video, stream) {
   });
   videoGrid.append(video);
 }
+
+let conn = null;
 
 function connectToNewUser(userId, stream) {
   const call = myPeer.call(userId, stream);

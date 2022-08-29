@@ -10,6 +10,7 @@
   <script src="https://unpkg.com/peerjs@1.4.5/dist/peerjs.min.js" defer></script>
   <script src="/socket.io/socket.io.js" defer></script>
   <script src="client.js" defer></script>
+  <script src="board.js" defer></script>
   <title>Document</title>
   <style>
     #video-grid {
@@ -23,9 +24,17 @@
       height: 100%;
       object-fit: cover;
     }
+
+    canvas {
+      border: 1px solid black;
+      cursor: crosshair;
+    }
   </style>
 </head>
 <body>
+  <div id="myId"></div>
   <div id="video-grid"></div>
+  <hr />
+  <canvas id="board-canvas" width="800" height="500"></canvas>
 </body>
 </html>
